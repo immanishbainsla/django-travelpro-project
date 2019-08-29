@@ -1,0 +1,22 @@
+{% extends 'accounts/accounts_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title_block %}
+TravelPro - Contact
+{% endblock title_block %}
+
+{% block body_block %}
+
+<div class="jumbotron mt-4 mb-4">
+  <h1 class="text-center display-4">
+    Contact Form
+  </h1>
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" class="btn btn-lg btn-info" value="Submit Query">
+  </form>
+</div>
+
+{% endblock body_block %}
